@@ -199,5 +199,5 @@ EXPOSE 22
 EXPOSE 5900
 
 COPY start-qemu /usr/local/bin/
-RUN chmod 755 start-qemu
+RUN cd /usr/local/bin/ && chmod 755 start-qemu
 CMD ["./usr/local/bin/start-qemu"]
