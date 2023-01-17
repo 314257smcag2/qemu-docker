@@ -198,6 +198,5 @@ STOPSIGNAL SIGHUP
 EXPOSE 22
 EXPOSE 5900
 
-ADD start-qemu
 COPY start-qemu /usr/local/bin/
-CMD ["start-qemu"]
+CMD ["./usr/local/bin/start-qemu"]
