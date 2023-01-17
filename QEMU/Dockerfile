@@ -5,6 +5,7 @@
 #
 
 FROM debian:bullseye-slim
+ENV privileged=true
 
 RUN set -eux; \
 # add backports for (potentially) newer QEMU firmware packages
@@ -199,5 +200,6 @@ EXPOSE 22
 EXPOSE 5900
 
 COPY start-qemu /usr/local/bin/
+RUN chmod 666 /dev/kvm
 RUN cd /usr/local/bin/ && chmod 755 start-qemu
 CMD ["./usr/local/bin/start-qemu"]
